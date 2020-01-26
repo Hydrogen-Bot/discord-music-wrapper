@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const discord_js_1 = require("discord.js");
+const discord = require("discord.js");
 const ytdl = require("ytdl-core");
 var YouTube = require("simple-youtube-api");
 class musicClient {
@@ -131,12 +132,7 @@ Please provide a value to select one of the search results ranging from 1-10.
                         }
                         catch (err) {
                             console.error(err);
-                            return msg.channel.send('No or invalid value entered, cancelling video selection.').then((m) => {
-                                return m.delete(10000).catch((reason) => {
-                                    console.log(`Attempting to delete a deleted message (Which is impossible)`);
-                                });
-                            });
-                        }
+                            return msg.channel.send('No or invalid value entered, cancelling video selection.')
                         const videoIndex = parseInt(response.first().content);
                         var video = yield youtube.getVideoByID(videos[videoIndex - 1].id);
                     }
