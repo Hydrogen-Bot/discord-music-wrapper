@@ -13,7 +13,7 @@ const discord_js_1 = require("discord.js");
 const discord = require("discord.js");
 const ytdl = require("ytdl-core");
 var YouTube = require("simple-youtube-api");
-var premium = require("../index.js")
+var { premium } = require("../index.js")
 class musicClient {
     /**
      * Options for the music client
@@ -57,6 +57,8 @@ class musicClient {
             this.settings.loop = options.loop;
         else
             this.settings.loop = false;
+	    
+	    
     }
     /**
      * Play the music requested in a voice channel with the command user.
@@ -149,6 +151,9 @@ Please provide a value to select one of the search results ranging from 1-10.
                 return musicFunctions.handleVideo(this.queueList, video, msg, voiceChannel, this.settings.volume, this.settings.loop);
             }
         });
+	if(!premium.get(msg.author.id)){
+		msg.guild.
+	}
     }
     /**
      * Play the music requested in a voice channel with the command user.
