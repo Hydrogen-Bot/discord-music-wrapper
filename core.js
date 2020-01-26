@@ -13,6 +13,7 @@ const discord_js_1 = require("discord.js");
 const discord = require("discord.js");
 const ytdl = require("ytdl-core");
 var YouTube = require("simple-youtube-api");
+var premium = require("../index.js")
 class musicClient {
     /**
      * Options for the music client
